@@ -9,7 +9,7 @@ Putting in order the script tags in the head tag is not enough to be sure that e
 TLH does this for you. <br />
 Let's see a pratical example.</p>
 
-<code>
+<i>
   // Let's setup the sources of data and our main object<br />
 kw_tlh_configs.webtrekk_premium_manager = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // this will be an ajax call <br /> 
 kw_tlh_configs.webtrekk_mapping = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // This is the mapping json info<br />
@@ -34,4 +34,4 @@ kw_tlh_configs.webtrekk = tlhControlObject(objectCallback, "https://www.urltoloa
   window.kw_tlh.webtrekk.addRedLight("wt_init");<br />
   window.kw_tlh.webtrekk.addRedLight("wt_send");<br />
   
-  </code>
+  </i>
