@@ -10,28 +10,28 @@ TLH does this for you. <br />
 Let's see a pratical example.</p>
 
 <code>
-  // Let's setup the sources of data and our main object
-kw_tlh_configs.webtrekk_premium_manager = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // this will be an ajax call  
-kw_tlh_configs.webtrekk_mapping = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // This is the mapping json info
-kw_tlh_configs.webtrekk = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // This is the main object
+  // Let's setup the sources of data and our main object<br />
+kw_tlh_configs.webtrekk_premium_manager = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // this will be an ajax call <br /> 
+kw_tlh_configs.webtrekk_mapping = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // This is the mapping json info<br />
+kw_tlh_configs.webtrekk = tlhControlObject(objectCallback, "https://www.urltoload.com/jstoload.js", onloadSuccessCallback, onloadErrorCallback, asyncLoad); // This is the main object<br />
   
-  // Let's assume we already have setup an object called adsetup before in the page
+  // Let's assume we already have setup an object called adsetup before in the page<br />
   
-  // Let's create the premium info source (the result of an ajax call in the end) and its dependency from adsetup object
-  window.kw_tlh.webtrekk_premium_manager = new tlhl("webtrekk_premium_manager", kw_tlh_configs.webtrekk_premium_manager);
-  window.kw_tlh.webtrekk_premium_manager.addLibRedLight("adsetup", window.kw_tlh.adsetup);        
-	window.kw_tlh.webtrekk_premium_manager.addRedLight("premium_data_formatted");        
+  // Let's create the premium info source (the result of an ajax call in the end) and its dependency from adsetup object<br />
+  window.kw_tlh.webtrekk_premium_manager = new tlhl("webtrekk_premium_manager", kw_tlh_configs.webtrekk_premium_manager);<br />
+  window.kw_tlh.webtrekk_premium_manager.addLibRedLight("adsetup", window.kw_tlh.adsetup);        <br />
+	window.kw_tlh.webtrekk_premium_manager.addRedLight("premium_data_formatted");       <br /> 
   
-  // Let's create the mapping entity and its dependency from adsetup object
-  window.kw_tlh.webtrekk_mapping = new tlhl("webtrekk_mapping", kw_tlh_configs.webtrekk_mapping);
-  window.kw_tlh.webtrekk_mapping.addLibRedLight("adsetup", window.kw_tlh.adsetup);
+  // Let's create the mapping entity and its dependency from adsetup object<br />
+  window.kw_tlh.webtrekk_mapping = new tlhl("webtrekk_mapping", kw_tlh_configs.webtrekk_mapping);<br />
+  window.kw_tlh.webtrekk_mapping.addLibRedLight("adsetup", window.kw_tlh.adsetup);<br />
   
-  // Let's complete the main object defining its dependencies 
-  window.kw_tlh.webtrekk = new tlhl("webtrekk", kw_tlh_configs.webtrekk);		
-  window.kw_tlh.webtrekk.addLibRedLight("webtrekk_premium_manager", window.kw_tlh.webtrekk_premium_manager);	
-  window.kw_tlh.webtrekk.addLibRedLight("webtrekk_mapping", window.kw_tlh.webtrekk_mapping);
-  window.kw_tlh.webtrekk.addLibRedLight("adsetup", window.kw_tlh.adsetup);    
-  window.kw_tlh.webtrekk.addRedLight("wt_init");
-  window.kw_tlh.webtrekk.addRedLight("wt_send");
+  // Let's complete the main object defining its dependencies <br />
+  window.kw_tlh.webtrekk = new tlhl("webtrekk", kw_tlh_configs.webtrekk);		<br />
+  window.kw_tlh.webtrekk.addLibRedLight("webtrekk_premium_manager", window.kw_tlh.webtrekk_premium_manager);	<br />
+  window.kw_tlh.webtrekk.addLibRedLight("webtrekk_mapping", window.kw_tlh.webtrekk_mapping);<br />
+  window.kw_tlh.webtrekk.addLibRedLight("adsetup", window.kw_tlh.adsetup);    <br />
+  window.kw_tlh.webtrekk.addRedLight("wt_init");<br />
+  window.kw_tlh.webtrekk.addRedLight("wt_send");<br />
   
   </code>
